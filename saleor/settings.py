@@ -1,5 +1,6 @@
 import ast
 import os.path
+from _locale import gettext
 
 import dj_database_url
 import dj_email_url
@@ -42,7 +43,16 @@ DATABASES = {
 
 
 TIME_ZONE = 'America/Chicago'
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'vi'
+
+#Translate form
+LANGUAGES = [
+
+    ('vi', gettext('Vietnamese')),
+
+]
+
 LOCALE_PATHS = [os.path.join(PROJECT_ROOT, 'locale')]
 USE_I18N = True
 USE_L10N = True
@@ -229,8 +239,10 @@ AUTH_USER_MODEL = 'account.User'
 
 LOGIN_URL = '/account/login/'
 
-DEFAULT_COUNTRY = 'US'
-DEFAULT_CURRENCY = 'USD'
+#DEFAULT_COUNTRY = 'US'
+#DEFAULT_CURRENCY = 'USD'
+DEFAULT_COUNTRY = 'VN'
+DEFAULT_CURRENCY = 'VND'
 AVAILABLE_CURRENCIES = [DEFAULT_CURRENCY]
 
 OPENEXCHANGERATES_API_KEY = os.environ.get('OPENEXCHANGERATES_API_KEY')
